@@ -114,14 +114,13 @@ async function handleRequest(req: IncomingMessage, res: ServerResponse) {
 }
 
 const server = http.createServer((req, res) => {
-  // basic logging
-  console.log(`${new Date().toISOString()} - ${req.method} ${req.url}`);
-  handleRequest(req, res).catch((err) => {
-    console.error('Unhandled error', err);
-    sendJSON(res, 500, { error: 'Internal Server Error' });
-  });
+    console.log(`${new Date().toISOString()} - ${req.method} ${req.url}`);
+    handleRequest(req, res).catch((err) => {
+        console.error('Unhandled error', err);
+        sendJSON(res, 500, { error: 'Internal Server Error' });
+    });
 });
 
 server.listen(PORT, () => {
-  console.log(`Todo API (strict TS) listening at http://localhost:${PORT}`);
+    console.log(`Todo API (strict TS) listening at http://localhost:${PORT}`);
 });
