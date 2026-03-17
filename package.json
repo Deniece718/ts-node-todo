@@ -1,5 +1,5 @@
 {
-  "name": "strict-ts-node-todo",
+  "name": "file-website",
   "version": "1.0.0",
   "private": true,
   "scripts": {
@@ -8,7 +8,16 @@
     "dev": "ts-node src/index.ts"
   },
   "devDependencies": {
+    "@types/cors": "^2.8.19",
     "ts-node": "^10.9.1",
     "typescript": "^5.5.6"
+  },
+  "dependencies": {
+    "@aws-sdk/client-dynamodb": "^3.1009.0",
+    "@aws-sdk/client-s3": "^3.1009.0",
+    "@aws-sdk/lib-dynamodb": "^3.1009.0",
+    "@aws-sdk/s3-request-presigner": "^3.1009.0",
+    "cors": "^2.8.6",
+    "dotenv": "^17.3.1"
   }
 }

@@ -1,12 +1,13 @@
-export type Todo = {
-    id: string;
+export type FileMetadata = {
+    fileId: string;
     title: string;
     description?: string;
-    completed: boolean;
-    createdAt: string;
-    updatedAt?: string;
+    createdAt: number | string;
+    updatedAt?: number | string;
+    s3Key: string;
+    isUploaded: boolean;
 }
 
-export type CreateTodoDto = Pick<Todo, 'title' | 'description'>;
+export type CreateFileMetadataDto = Pick<FileMetadata, 'title' | 'description'> & { filename: string };
 
-export type UpdateTodoDto = Partial<Pick<Todo, 'title' | 'description' | 'completed'>>;
+export type FetchFileMetadataResponse = Pick<FileMetadata, 'title' | 'description' | 'createdAt' | 'updatedAt'> & { presignedUrl: string };
